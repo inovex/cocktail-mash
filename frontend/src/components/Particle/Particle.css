@@ -1,0 +1,13 @@
+.Particle {
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: hotpink;
+    opacity: 1;
+}
+
+@keyframes Particle-fade-out {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}

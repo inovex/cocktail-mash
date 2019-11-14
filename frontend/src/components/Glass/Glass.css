@@ -1,0 +1,27 @@
+.Glass {
+
+}
+
+.Glass__Back {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    z-index: 3;
+}
+
+.Glass__Filling {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    z-index: 5;
+}
+
+.Glass__Front {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    z-index: 6;
+}

@@ -1,0 +1,8 @@
+.CheapParticle {
+    display: inline-block;
+    position: absolute;
+    background-color: skyblue;
+    transition-property: all;
+    transition-duration: 3s;
+    transition-timing-function: linear;
+}

@@ -1,0 +1,13 @@
+.WaterParticle {
+    display: inline-block;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 400ms;
+    transition-timing-function: ease-in;
+
+    z-index: 4;
+}
+
+.WaterParticle svg {
+    width: 30px !important;
+}

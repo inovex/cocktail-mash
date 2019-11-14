@@ -1,0 +1,25 @@
+.Tutorial {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    border: 1px solid brown;
+}
+
+.Tutorial__Left {
+    flex: 1 0 50%;
+    border: 1px solid blue;
+}
+
+.Tutorial__Right {
+    flex: 1 0 50%;
+    border: 1px solid green;
+}
+
+.Tutorial__Color {
+    border: 1px solid black;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    width: 70px;
+    height: 30px;
+}

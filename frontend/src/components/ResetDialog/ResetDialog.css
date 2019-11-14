@@ -1,0 +1,41 @@
+.ResetDialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 2000;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ResetDialog__Wrapper {
+    visibility: hidden;
+    animation: ResetDialogAppear 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.ResetDialog__Buttons svg:nth-of-type(1) {
+    position: absolute;
+    left: 145px;
+    top: 238px;
+}
+
+.ResetDialog__Buttons svg:nth-of-type(2) {
+    position: absolute;
+    left: 145px;
+    top: 172px;
+}
+
+@keyframes ResetDialogAppear {
+    0% {
+        visibility: visible;
+        transform: scale(0.0001, 0.0001);
+    }
+    100% {
+        visibility: visible;
+        transform: scale(1, 1);
+    }    
+}

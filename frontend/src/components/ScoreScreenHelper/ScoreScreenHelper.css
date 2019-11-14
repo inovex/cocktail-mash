@@ -1,0 +1,47 @@
+.ScoreScreenHelper {
+    margin-top: 30px;
+    display: block;
+}
+
+.ScoreScreenHelper__Title {
+    font-family: 'LeckerliOne';
+    font-size: 32px;
+}
+
+.ScoreScreenHelper__TotalScore {
+    margin-top: 60px;
+    background-color: #5277ff;
+    color: #fff;
+    padding: 24px
+}
+
+.ScoreScreenHelper__TotalScore p:first-of-type {
+    font-size: 28px;
+    margin: 0px;
+}
+
+.ScoreScreenHelper__TotalScore p:last-of-type {
+    margin: 0px;
+    font-size:72px;
+    font-weight: bold;
+}
+
+.ScoreScreenHelper__DetailScoreWrapper {
+    display: inline-flex;
+    margin-bottom: 20px;
+}
+
+.ScoreScreenHelper__DetailScoreWrapper div {
+    width: 230px;
+    margin: 0 16px;
+}
+
+.ScoreScreenHelper__DetailScoreWrapper div > p:first-of-type {
+    margin: 32px 0 8px 0;
+    font-size: 20px;
+}
+
+.ScoreScreenHelper__DetailScoreWrapper div > p:last-of-type {
+    margin: 0px;
+    font-size:40px;
+}

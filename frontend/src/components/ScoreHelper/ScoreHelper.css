@@ -1,0 +1,137 @@
+.ScoreHelper {
+    margin-top: 20px;
+    display: block;
+}
+
+.ScoreHelper__Title {
+    font-family: 'LeckerliOne';
+    font-size: 32px;
+    visibility: hidden;
+    animation: ScoreHelperTitleAppear 0.5s ease-out 0.5s 1 forwards;
+}
+
+.ScoreHelper__Taste {
+    font-size: 32px;
+    margin-top: 10px;
+    visibility: hidden;
+    animation: ScoreHelperTitleAppear 0.5s ease-out 1s 1 forwards;
+}
+
+
+.ScoreHelper__FillBonus--Penalty {
+    color: #ff4c4c;
+    font-weight: bold;
+}
+
+.ScoreHelper__DetailScoreWrapper {
+    display: inline-block;
+    width: 450px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: ScoreHelperDetailsAappear 0.5s ease-out 1.5s 1 forwards;
+}
+
+.ScoreHelper__DetailsScoreWrapperTaste,
+.ScoreHelper__DetailsScoreWrapperFill,
+.ScoreHelper__DetailsScoreWrapperTime,
+.ScoreHelper__DetailsScoreWrapperTotal {
+    display: flex;
+    padding: 8px 0;
+    font-size: 32px;
+    width: 100%;
+}
+
+.ScoreHelper__DetailsScoreWrapperTotal {
+    margin-top: 20px;
+    border-top: 8px double black;
+}
+
+.ScoreHelper__DetailsScoreWrapperFill,
+.ScoreHelper__DetailsScoreWrapperTime {
+    font-size: 22px;
+}
+
+.ScoreHelper__DetailsScoreWrapperTaste div:nth-of-type(1),
+.ScoreHelper__DetailsScoreWrapperFill div:nth-of-type(1),
+.ScoreHelper__DetailsScoreWrapperTime div:nth-of-type(1),
+.ScoreHelper__DetailsScoreWrapperTotal div:nth-of-type(1) {
+    flex: 0 1 auto;
+    text-align: left;
+}
+
+.ScoreHelper__DetailsScoreWrapperTaste div:nth-of-type(2),
+.ScoreHelper__DetailsScoreWrapperFill div:nth-of-type(2),
+.ScoreHelper__DetailsScoreWrapperTime div:nth-of-type(2) {
+    border-bottom: 1px dashed #000;
+    flex: 1 0 auto;
+    text-align: right;
+}
+
+.ScoreHelper__DetailsScoreWrapperTotal div:nth-of-type(2) {
+    flex: 1 0 auto;
+    text-align: right;
+}
+
+.ScoreHelper__DetailScoreWrapper div > p:first-of-type {
+    margin: 32px 0 8px 0;
+    font-size: 20px;
+}
+
+.ScoreHelper__DetailScoreWrapper div > p:last-of-type {
+    margin: 0px;
+    font-size: 32px;
+    padding-bottom: 5px;
+}
+
+.ScoreHelper__Gauge {
+    border-bottom: 8px solid #5277FF;
+    position: relative;
+}
+
+.ScoreHelper__FillBonus--Penalty {
+    border-bottom: 8px solid #ff4c4c;
+}
+
+.ScoreHelper__Gauge:after {
+    position: absolute;
+    content: '';
+    left: var(--gauge-percent);
+    width: calc(100% - var(--gauge-percent));
+    height: 100%;
+    border-bottom: 8px solid lightgray;
+}
+
+.ScoreHelper__FillBonus--Penalty.ScoreHelper__Gauge:after {
+    position: absolute;
+    content: '';
+    left: unset;
+    right: var(--gauge-percent);
+    width: calc(100% - var(--gauge-percent));
+    height: 100%;
+    border-bottom: 8px solid lightgray;
+}
+
+@keyframes ScoreHelperTitleAppear {
+    from {
+        transform: scale(4, 4);
+        visibility: visible;
+    }
+
+    to {
+        visibility: visible;
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes ScoreHelperDetailsAappear {
+    from {
+        opacity: 0;
+        visibility: visible;
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}

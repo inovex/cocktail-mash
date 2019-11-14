@@ -1,0 +1,6 @@
+.Table {
+    position: absolute;
+    bottom: -20px;
+
+    z-index: 1;
+}
