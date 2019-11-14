@@ -193,7 +193,7 @@ async def playGame(browser, genome, config, fillSteps):
 
     page = await browser.newPage()
     await page.setViewport({'width': 1280, 'height': 720})
-    await page.goto('https://build.bontscho.now.sh/')
+    await page.goto('https://inovex.github.io/cocktail-mash/')
     await setupButtonPressHandler(page)
     await setupUpdateScoreHandler(page)
     await setupUpdateFinalScoreHandler(page)
