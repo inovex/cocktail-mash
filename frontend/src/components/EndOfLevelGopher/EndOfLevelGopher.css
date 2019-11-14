@@ -1,0 +1,41 @@
+.EndOfLevelGopher {
+    margin-top: 30px;
+}
+
+.EndOfLevelGopher--final .EndOfLevelGopherFill {
+    fill: red;
+    animation: EndOfLevelGopherFillFade 10s linear infinite;
+}
+
+@keyframes EndOfLevelGopherFillFade {
+    0% {
+        fill: red;
+    }
+    11% {
+        fill: orange;
+    }
+    22% {
+        fill: yellow;
+    }
+    33% {
+        fill: lime;
+    }
+    44% {
+        fill: green;
+    }
+    55% {
+        fill: cyan;
+    }
+    66% {
+        fill: blue;
+    }
+    77% {
+        fill: purple;
+    }
+    88% {
+        fill: violet;
+    }
+    100% {
+        fill: red;
+    }
+}

@@ -1,0 +1,35 @@
+.ColorHint {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+}
+
+.ColorHint svg {
+    height: 450px;
+}
+
+.ColorHint__Recipe,
+.ColorHint__Title {
+    fill: #000;
+    text-anchor: middle;
+    font-size: 32px;
+    font-family: 'LeckerliOne';
+}
+
+.ColorHint__Ratio {
+    font-size: 32px;
+    font-family: Lato;
+    fill: #000;
+}
+
+.ColorHint__Question {
+    font-size: 120px;
+    font-weight: bold;
+    font-family: Lato;
+    fill: #000;
+}
+
+/*
+Beige Slime Fizzer Receipt: 
+        Furn Gulp Receipt: 
+        */

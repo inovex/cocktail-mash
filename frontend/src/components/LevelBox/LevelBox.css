@@ -1,0 +1,19 @@
+.LevelBox {
+    position: absolute;
+    top: 20px;
+    right: 130px;
+}
+
+.LevelBox__Title {
+    fill: black;
+}
+
+.LevelBox__Level {
+    font-size: 38px;
+    fill: black;
+    text-anchor: middle;
+}
+
+.LevelBox__Level--Training {
+    font-size: 28px;
+}

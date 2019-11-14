@@ -1,0 +1,35 @@
+.CocktailGlass {
+    position: absolute;
+    left: 536px;
+    bottom: 40px;
+}
+
+.CocktailGlass--medium svg {
+    height: 250px;
+}
+
+.CocktailGlass--small svg {
+    height: 120px;
+}
+
+.CocktailGlass__Top {
+    z-index: 1;
+    flex: 0 0 20px;
+    border-bottom: 4px dashed black;
+}
+
+.CocktailGlass__FillContainer {
+    position: relative;
+    flex: 1 0;
+    height: 100%;
+}
+
+.CocktailGlass__Fill {
+    transition-property: height;
+    transition-timing-function: linear;
+
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}

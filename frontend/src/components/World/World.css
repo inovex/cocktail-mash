@@ -1,0 +1,9 @@
+.World {
+    display: block;
+    position: relative;
+    margin: auto;
+    height: 720px;
+    width: 1280px;
+    background-color: #DFF4F0;
+    overflow: hidden;
+}
