@@ -1,0 +1,11 @@
+neat-checkpoint-*
+.idea
+.vscode
+__pycache__
+Digraph.gv*
+winner.pkl
+speciation.svg
+avg_fitness.svg
+neat-examples
+history
+*.ods
