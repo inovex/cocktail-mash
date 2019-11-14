@@ -1,5 +1,5 @@
 let HIGHSCORE: HighScore;
-const LOCAL_STORAGE_KEY = 'godays_highscore';
+const LOCAL_STORAGE_KEY = 'cocktail_mash_highscore';
 
 export interface HighscoreEntry {
     name: string;
