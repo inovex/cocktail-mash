@@ -1,12 +1,10 @@
-## Interactive machine learning with Goda
+## Interactive machine learning with Cocktail-Mash
 
-This is a machine learning implementation for the Goda game. 
-[Goda](link to game repo) is a game developed by inovex and can be controlled by 
+This is a machine learning implementation for Cocktail-Mash. 
+Cocktail-Mash is a game developed by inovex and can be controlled by 
 a AI trained by this NEAT implementation. 
 
-The process of training the AI can therefore be watched with Goda-NEAT.
-
-[insert gif of training process]
+The process of training the AI can therefore be watched with this implementation.
 
 Additionally to the model a visualized image of the Neural Network and statistic of the learning process will be saved. 
 
@@ -30,18 +28,6 @@ All dependencies for this project can be installed by:
 python3 -m pip install -r requirements.txt
 ```
 
-
-### Change the browser path of pyppeteer 
-
-In the file ``` neat_goda_play.py ``` you will have to change the path in the following line:
-
-```#browser = await launch({'headless': False, 'args': ['--window-size=1920,1080']}) ```
-
-to the path of your prefered chrome (or chromium) installation:
-
-``` browser = await launch(headless=False, executablePath='/path/to/your/chrome-browser') ```
-
-
 ## How to run:
 
 ### Run a model already trained:
@@ -52,7 +38,7 @@ Models saved to the disk can be run directly by providing their path to the ```n
 python3.6 neat_goda_run.py model_ai_finish
 ```
 
-If not path is provided the newest model from the history folder will be loaded.
+If no path is provided the newest model from the history folder will be loaded.
 
 ### Train a new model:
 
@@ -96,14 +82,13 @@ Denotes with which kind of recips the Model will be trained with. There are thre
 
 ```fillSteps``` The amouth of units filled in the glass each step. Default is 10.
 
-```viewNetwork``` True if the Network-Image should be shown after training? They will be saved in any case.
+```viewNetwork``` True if the Network-Image should be shown after training. They will be saved in any case.
 
-```viewSpeciesGraph``` True if the Species-Graph should be shown after training? They will be saved in any case.
+```viewSpeciesGraph``` True if the Species-Graph should be shown after training. They will be saved in any case.
 
-```viewFitnessGraph```True if the Fitness-Graph should be shown after training? They will be saved in any case.
+```viewFitnessGraph```True if the Fitness-Graph should be shown after training. They will be saved in any case.
 
-```logToFile``` True if all output should be writen to a logfile. This is usufull if you want to run the training on a server and 
-inspect the output later.
+```logToFile``` True if all output should be writen to a logfile. This is usufull if you want to run the training on a server and inspect the output later.
 
 ### config 
 
