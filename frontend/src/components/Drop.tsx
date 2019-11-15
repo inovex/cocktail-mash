@@ -3,7 +3,7 @@ import * as React from 'react';
 const Drop = (props: { color: string }) => {
     // const type = 1 // Math.floor(Math.random() * 8);
 
-    const filename = `/images/Drop1_${props.color}.png`;
+    const filename = `images/Drop1_${props.color}.png`;
 
     return <img alt="0" width="45px" style={{marginLeft: "-10px"}} src={filename}/>;
     // switch(type) {
