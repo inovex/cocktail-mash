@@ -16,7 +16,7 @@ globalScore = -1
 globalFinalScore = -1
 capacyityLevel = [400, 400, 250, 100]
 
-#Get the RGB color in the glass of specified page game
+#Get the RGB color in the glass of specified page
 async def getGlassColor(page):
     data = await page.evaluate('''() => {
             return {
@@ -29,7 +29,7 @@ async def getGlassColor(page):
     colorString = colorString[5:len(colorString)-3].split(",")
     return list(map(int, colorString))
 
-#Get the RBG recipe of specified page game
+#Get the RBG recipe of specified page
 async def getRecipe(page):
     data = await page.evaluate('''() => {
             return {
@@ -37,12 +37,12 @@ async def getRecipe(page):
             }              
         }'''
     )
-    #RGB Werte herausschneiden und in int array parsen
+    #Extract RGB values and parse into int
     colorString = data["glassColor"]
     colorString = colorString[5:len(colorString)-3].split(",")
     return list(map(int, colorString))
 
-#Get fill status in percent of specified page game
+#Get fill status in percent of specified page
 async def getGlassFillPercent(page):
     data = await page.evaluate('''() => {
             return {
@@ -52,7 +52,7 @@ async def getGlassFillPercent(page):
     )
     return float(data["glassFill"])
 
-#Get the current color and fill in Percent of specified page game
+#Get the current color and fill in Percent of specified page
 async def getGlassFillPercentAndColor(page):
     data = await page.evaluate('''() => {
             return {
@@ -68,7 +68,7 @@ async def getGlassFillPercentAndColor(page):
 
 
 #Setups a observer in the game which calls updateGlassFill each time the content of the glass changes
-#page: page in which the game is running
+#page: page the game is running in
 #At the moment this approach isn't used because it is uses a lot of perfomance
 async def setupUpdateGlassFillHandler(page):
     await page.exposeFunction("handleColorFill",updateGlassFill)
@@ -89,7 +89,7 @@ def updateGlassFill(glassFill):
     globalGlassFill = glassFill
 
 #Setups a observer in the game which calls updateGlassColor each time the content of the glass changes
-#page: page in which the game is running
+#page: page the game is running in
 #At the moment this approach isn't used because it is uses a lot of perfomance
 async def setupUpdateGlassColorHandler(page):
     await page.exposeFunction("handleColorGlass",updateGlassColor)
@@ -111,7 +111,7 @@ def updateGlassColor(glassColor):
     golbalGlassColor = list(map(int, glassColor))
 
 #Setups a observer in the game which calls updateScore each time the score changes
-#page: page in which the game is running
+#page: page the game is running in
 #At the moment this approach isn't used because it is uses a lot of perfomance
 async def setupUpdateScoreHandler(page):
     await page.exposeFunction("handleIntermediate",updateScore)
@@ -123,7 +123,7 @@ def updateScore(currentScore):
     globalScore = currentScore
 
 #Setups a observer in the game which calls finalScore each time the final score changes
-#page: page in which the game is running
+#page: page the game is running in
 #At the moment this approach isn't used because it is uses a lot of perfomance
 async def setupUpdateFinalScoreHandler(page):
     await page.exposeFunction("handleFinalScore",updateFinalScore)
@@ -135,7 +135,7 @@ def updateFinalScore(finalScore):
     print("Final score", finalScore)
     globalFinalScore = finalScore
 
-#setups the butten press logic thus only one button is pressed at the same time
+#setups the button press logic thus only one button is pressed at the same time
 async def setupButtonPressHandler(page):
     #only one button a time can be pressed
     #a button is pressed and released after a specified timeout
@@ -160,7 +160,7 @@ async def setupButtonPressHandler(page):
 #This function is used to press the color buttons and to continue a level
 #page: page running the game
 #key: key which should be pressed as char
-#duration: is time in SECONDS
+#duration: time in SECONDS the button should be hold
 async def pressButton(page, key, duration):
     duration *= 1000  # seconds to milliseconds
     # wenn zweimal die selbe taste gedrückt wird und die events dazu verzahnt sind muss das folgende key up event gelösch werden
@@ -184,7 +184,7 @@ def patch_pyppeteer():
 #browser: a chrome browser where the game will be startet in a new page
 #genome: the model which should play the game
 #config: config specifing the models settings
-#fillSteps: Amount of color added each interval thus also specifies number of intervals
+#fillSteps: Amount of color added each interval
 async def playGame(browser, genome, config, fillSteps):
 
     global globalFinalScore, globalScore, capacyityLevel
@@ -261,13 +261,13 @@ async def playLevel(page, net, fillSteps, capacity):
         await asyncio.sleep(timeSteps)#sleep is in seconds ... wired
 
 #This function will open a new browser and run a game of Goda with specified model
-#genome: the model which should play the game
+#net: the model which should play the game
 #config: config specifing the models settings
 #fillSteps: Amount of color added each interval thus also specifies number of intervals
-async def runSingleGame(genome, config, fillSteps):
+async def runSingleGame(net, config, fillSteps):
     patch_pyppeteer() #prevents browser timeout after 20 sec
     browser = await launch({'headless': False, 'args': ['--window-size=1920,1080']})
-    await playGame(browser, genome, config, fillSteps)
+    await playGame(browser, net, config, fillSteps)
     await browser.close()
 
 

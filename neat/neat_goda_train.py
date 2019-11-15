@@ -102,7 +102,7 @@ def eval_genomes(genomes, config):
             globalBestGenomeFitness = bestGenomeFitness
             runGameWithGenome(bestGenome, config, fillSteps)
 
-    #run each n-th generation in browser n = runEachGeneration OR
+    #run each n-th generation in browser n = runEachGeneration
     if (runEachGeneration != 0 and counter % runEachGeneration == 0):
         bestGenome, bestGenomeFitness = findBestGenome(genomes)
         runGameWithGenome(bestGenome, config, fillSteps)
@@ -119,7 +119,7 @@ def findBestGenome(genomes):
 
     return bestGenome, bestGenomeFitness
 
-#opens a browser and starts game with specified genome's model
+#opens a browser and starts game with specified genomes model
 def runGameWithGenome(genome, config, fillSteps):
     print("Run game with fitness of"+str(genome.fitness))
     loop = asyncio.get_event_loop()

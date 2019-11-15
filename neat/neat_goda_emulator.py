@@ -39,7 +39,7 @@ def calcFillPercent(g):
     g.fillInPercent = (g.stateCyan + g.stateMagenta + g.stateYellow) / g.capacity * 100
     return g.fillInPercent
 
-#Calc points based on filling and color NO TIME YET!!!
+#Calc points based on filling and color. Time is not included into calculatuin yet!
 def getPoints(game):
 
     fillPercent = calcFillPercent(game)
