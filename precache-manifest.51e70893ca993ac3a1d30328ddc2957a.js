@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c6380f25d018521b97069f869969384b",
+    "revision": "1d54b7c40f8db4d8b73814f20bb7f079",
     "url": "/cocktail-mash/index.html"
   },
   {
-    "revision": "f3c5c4e128daa3d459a6",
+    "revision": "6be9fb3de88ba4cf5301",
     "url": "/cocktail-mash/static/css/main.2703d6ac.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cocktail-mash/static/js/2.532e1df4.chunk.js"
   },
   {
-    "revision": "f3c5c4e128daa3d459a6",
-    "url": "/cocktail-mash/static/js/main.af39541f.chunk.js"
+    "revision": "6be9fb3de88ba4cf5301",
+    "url": "/cocktail-mash/static/js/main.ad2d27b2.chunk.js"
   },
   {
     "revision": "58b7a220e048bd942a74",
