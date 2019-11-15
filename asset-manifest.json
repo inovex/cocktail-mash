@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/cocktail-mash/static/css/main.2703d6ac.chunk.css",
+    "main.js": "/cocktail-mash/static/js/main.af39541f.chunk.js",
+    "main.js.map": "/cocktail-mash/static/js/main.af39541f.chunk.js.map",
+    "runtime~main.js": "/cocktail-mash/static/js/runtime~main.b1f29d77.js",
+    "runtime~main.js.map": "/cocktail-mash/static/js/runtime~main.b1f29d77.js.map",
+    "static/js/2.532e1df4.chunk.js": "/cocktail-mash/static/js/2.532e1df4.chunk.js",
+    "static/js/2.532e1df4.chunk.js.map": "/cocktail-mash/static/js/2.532e1df4.chunk.js.map",
+    "index.html": "/cocktail-mash/index.html",
+    "precache-manifest.7866e22385366244da31dbf9df87965c.js": "/cocktail-mash/precache-manifest.7866e22385366244da31dbf9df87965c.js",
+    "service-worker.js": "/cocktail-mash/service-worker.js",
+    "static/css/main.2703d6ac.chunk.css.map": "/cocktail-mash/static/css/main.2703d6ac.chunk.css.map",
+    "static/media/index.css": "/cocktail-mash/static/media/LeckerliOne-Regular.018c747c.ttf"
+  }
+}
