@@ -32,10 +32,10 @@ python3 -m pip install -r requirements.txt
 
 ### Run a model already trained:
 
-Models saved to the disk can be run directly by providing their path to the ```neat_goda_run.py```. For exammple to run the sample models provided in the repository use:
+Models saved to the disk can be run directly by providing their path to the ```neat_run.py```. For exammple to run the sample models provided in the repository use:
 
 ```
-python3.6 neat_goda_run.py model_ai_finish
+python3.6 neatrun.py model_ai_finish
 ```
 
 If no path is provided the newest model from the history folder will be loaded.
@@ -45,19 +45,19 @@ If no path is provided the newest model from the history folder will be loaded.
 To train a new model just start the training process with the following command:
 
 ```
-python3.6 neat_goda_train.py
+python3.6 neattrain.py
 ```
 
 All progress will be saved to the ```history/[date_time] ``` folder including: config, graph, network and checkpoints
 
 ## Individualize the learning process
 
-There are two config files in this project ``` neat_goda_config.json ``` for general setting and ``` config``` to change 
+There are two config files in this project ``` neat_config.json ``` for general setting and ``` config``` to change
 the behaviour of the machine learning process. By changing their settings you can take impact in the traing setup and process.
 
-### neat_goda_config.json
+### neat_config.json
 
-The ``` neat_goda_config.json ``` specifies the learning setup of the goda game. The options are described in the following:
+The ``` neat_config.json ``` specifies the learning setup of the game. The options are described in the following:
 
 ``` numberOfEvolutions  ```
 The numbers of evolutions the model will take by training. Default is 100 the 
