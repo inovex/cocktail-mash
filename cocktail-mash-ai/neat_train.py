@@ -1,8 +1,10 @@
+#!/usr/bin/python3
 """
 Implementation of Goda Game
 """
 
 from __future__ import print_function
+import argparse
 import os
 import asyncio
 import neat
@@ -14,9 +16,10 @@ import sys
 import json
 
 #import from local files
-from neat_goda_emulator import playGameEmulator
-from neat_goda_play import runSingleGame
 import visualize
+#from .visualize import *
+from neat_game_emulator import playGameEmulator
+from neat_play import runSingleGame
 
 #changeable parameters
 numberOfEvolutions = 0
@@ -60,7 +63,7 @@ def addRatioColors():
         for ratioA in ratio:
             for ratioB in ratio:
                 for ratioC in ratio:
-                    if (ratioA is not ratioB and ratioB is not ratioC and ratioA is not ratioC):
+                    if (ratioA is not ratioB is not ratioC):
                         trainRecipes.append(generateRatioColor(ratioA, ratioB, ratioC))
 
 def generateRatioColor(ratioC, ratioM, ratioY):
@@ -108,7 +111,7 @@ def eval_genomes(genomes, config):
         runGameWithGenome(bestGenome, config, fillSteps)
     return
 
-#finds the best genome grom a array of genomes
+#finds the best genome from a array of genomes
 def findBestGenome(genomes):
     # find fittest genome
     bestGenomeFitness = 0
@@ -121,7 +124,7 @@ def findBestGenome(genomes):
 
 #opens a browser and starts game with specified genomes model
 def runGameWithGenome(genome, config, fillSteps):
-    print("Run game with fitness of"+str(genome.fitness))
+    print("Run game with fitness of "+str(genome.fitness))
     loop = asyncio.get_event_loop()
     loop.run_until_complete(runSingleGame(genome, config, fillSteps))
 
@@ -184,8 +187,8 @@ def main(config_name = "config"):
         viewNetwork, viewSpeciesGraph,viewFitnessGraph
 
     # load config file data
-    assert (os.path.isfile('neat_goda_config.json')), "neat_goda_config.json file is missing"
-    with open('neat_goda_config.json') as config_file:
+    assert (os.path.isfile('neat_config.json')), "neat_config.json file is missing"
+    with open('neat_config.json') as config_file:
         config_data = json.load(config_file)
 
     numberOfEvolutions = config_data['numberOfEvolutions']
@@ -219,7 +222,7 @@ def main(config_name = "config"):
     # move neat config to savefolder
     savefolderPath = "history/" + savefolderName
     shutil.copy('config', savefolderPath + "/" + config_name)
-    shutil.copy('neat_goda_config.json', savefolderPath + "/" + 'neat_goda_config.json')
+    shutil.copy('neat_config.json', savefolderPath + "/" + 'neat_config.json')
     config_path = os.path.join(local_dir, config_name)
     os.chdir(savefolderPath)
 
@@ -235,8 +238,9 @@ def main(config_name = "config"):
 
 if __name__ == '__main__':
 
-    if (len(sys.argv) == 2):
-        config_name = sys.argv[1]
-        main(config_name)
-    else:
-        main('config')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-c', '--config',
+                        help="Specifiy a alternative configuration", default='config')
+    args = parser.parse_args()
+    main(args.config)
+

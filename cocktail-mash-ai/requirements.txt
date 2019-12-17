@@ -1,6 +1,5 @@
 #### Run the following command to install all requirements #####
 #### python3 -m pip install -r requirements.txt #####
-
 matplotlib
 graphviz
 neat-python == 0.92
