@@ -1,0 +1,11 @@
+{
+        "numberOfEvolutions":100,
+        "runEachGeneration": 0,
+        "runNewBest": true,
+        "numberOfRandomRecipes": 0,
+        "fillSteps":5,
+        "viewNetwork": true,
+        "viewSpeciesGraph": false,
+        "viewFitnessGraph": false,
+        "logToFile": false
+}
